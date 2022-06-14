@@ -1,0 +1,28 @@
+function result (string, factor) {
+    var response = ""
+    var initialCharacter = ""
+    var repeatedCount = 0
+ 
+    for(i = 0; i < string.length; i++) {
+        let currentCharacter = string[i]
+        
+        if (initialCharacter == currentCharacter) {
+            repeatedCount++
+        } else {
+            initialCharacter = currentCharacter
+            repeatedCount = 0
+        }
+        
+        if (repeatedCount < factor) {
+           response += currentCharacter
+        }
+    }
+    
+    return response
+}
+ 
+console.log(result("1111222233334444", 1)) // resultado 1234
+console.log(result("AAABBBCCC", 2)) // resultado AABBCC
+console.log(result("AAAAABBBBCCCCFF", 3)) // resultado AAABBBCCCFF
+console.log(result("Hola Mundo", 1000)) // resultado Hola Mundo
+console.log(result("ZZZaaLLt111666", 2)) // resultado ZZaaLLt1166
